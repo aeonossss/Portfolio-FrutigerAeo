@@ -1,0 +1,161 @@
+.title-bar{
+    cursor: grab;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2px 6px;
+    width: 100%;
+    padding-top:18px;
+    padding-left: 20px;
+    padding-right:20px;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.nav-buttons{
+    height: 20px;
+    width: 20px;
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+}
+
+.controls button {
+    background: none;
+    border: 1px solid #4C749C;
+    width: 2.5vw;
+    height: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    padding-bottom: 2vh;
+}
+
+.minimize button{
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #CCE8FF, #D8ECF9);
+}
+
+.maximize button{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exit button{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.draggable-window {
+    -webkit-user-drag: none;
+    user-select: none;  
+    background:  linear-gradient(90deg, rgba(204, 232, 255, 0.75), rgba(216, 236, 249, 0.75));
+    width: 60vw;
+    height: 60vh;
+    border-radius: 6px;
+    position: absolute;
+    border: 0.5px solid #A6C3D9;
+    box-shadow: 0 4px 8px #2a293230;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden   ;
+    justify-content: center;
+    align-items: center;
+}
+
+.draggable-window.minimized {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.top-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.wmp-icon{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.wmp-button{
+    margin-left:40px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    color: #4C749C
+}
+
+.wmp-button:hover{
+    filter: brightness(1.2);
+}
+
+.wmp-title-button{
+    font-size: 14px;
+    margin-top:4px;
+}
+
+.light-button{
+    margin-left:20px;
+    margin-top:10vh;
+    margin: 5px;
+    width:20px;
+    height:20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.light-button:hover{
+    filter: brightness(1.1);
+}
+
+.dark-button{
+    margin-left:20px;
+    margin-top: 5;
+    margin: 5px;
+    width:20px;
+    height:20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dark-button:hover{
+    filter: brightness(1.2);
+}
+
+.search-bar{
+    background: #DDEFFB;
+    border: solid #74A5D0;
+    border-radius: 6px;
+    width: 40%;
+    height: 30px;
+    cursor: pointer;
+}
+
+.search{
+    width: 24px;
+    height: 24px;
+}
+
+.window-content{
+    background: linear-gradient(#CFFDFF 4%,#AEDDFA 15%,#E9F7F8 25%, #BFE8FE 85%, #94CAE2 100%);
+    flex: none;
+    margin: auto;
+    overflow: auto;
+    display: relative;
+    width: 95%;
+    height: 75%;
+}
+
+
