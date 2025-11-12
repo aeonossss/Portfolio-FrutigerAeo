@@ -170,6 +170,10 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
 
       {!window.minimized && (
         <div className="window-content">
+
+          {/*INNER CONTENT*/}
+          <div className='inner-content'>
+            {/*TOP BUTTONS*/}
           <div className='top-buttons'>
             <img src={lightButton} className='light-button'alt='Light Mode'></img>
             <img src={darkButton} className='dark-button'alt='Dark Mode'></img>
@@ -178,9 +182,13 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
               <p className='wmp-title' onClick={() => openWindow({id: 2, title:"Media Player", icon: wmpIcon})}>Media Player</p>
             </div>
           </div>
-          <div className='inner-content'>
             {window.title === "Media Player" && <MediaPlayer />}
             {window.title === "Profile" && <Profile />}
+          </div>
+
+          {/*BOTTOM CONTENT*/}
+          <div className='bottom-content'>
+            <h1>bottom content</h1>
           </div>
         </div>
       )}

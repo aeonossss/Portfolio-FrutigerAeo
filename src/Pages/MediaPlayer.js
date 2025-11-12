@@ -21,7 +21,7 @@ function MediaPlayer(){
         {title: "Wii Party - Main Menu", src: wiiparty},
         {title: "Aphex Twin - Flim", src: flim},
         {title: "Loonboon - Laura Shigihara", src:lnbm},
-        {title: "Aquatic Ambience [Restored]", src: aqtc},
+        {title: "Aquatic Ambience [Restored] - Donkey Kong", src: aqtc},
         {title: "Zombies On Your Lawn (Instrumental) - Laura Shigihara", src: onyolawn},
         {title: "Shop Theme - Nintendo DSi", src:shop},
         {title: "Friday Theme - Roblox 3008 OST", src:friday},
@@ -30,8 +30,17 @@ function MediaPlayer(){
     ];
     const [song, setSong] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [currentTime, setCurrentTime]= useState(0);
+    const [duration, setDuration] = useState(0);
 
     const audioRef = useRef(null);
+
+    const formatTime = (time) =>{
+        if (isNaN(time)) return '0:00';
+        const minutes = Math.floor(time/60);
+        const seconds = Math.floor(time % 60).toString().padStart(2,'0');
+        return `${minutes}:${seconds}`;
+    }
 
     useEffect(()=>{
         if(song && audioRef.current){
@@ -39,6 +48,20 @@ function MediaPlayer(){
             setIsPlaying(true);
         }
     }, [song]);
+
+    const handleTimeUpd = () =>{
+        setCurrentTime(audioRef.current.currentTime);
+    }
+
+    const handleLoaded = () =>{
+        setDuration(audioRef.current.duration);
+    }
+
+    const handleSeek = (e) =>{
+        const newTime = e.target.value;
+        audioRef.current.currentTime = newTime;
+        setCurrentTime(newTime);
+    }
 
     const selectSong = (s) =>{
         if(song?.title === s.title){
@@ -60,7 +83,6 @@ function MediaPlayer(){
     return <div>
         <div className="">
             <h3>Now Playing: {song ? song.title : ""}</h3>
-            <img src={isPlaying ? pauseBtn : playBtn} className="play-btn" alt='play/pause' onClick={togglePlay}/>
             <div className="song-list">
                 {songs.map(s =>(
                     <p key ={s.title} onClick={() => selectSong(s)}>
@@ -69,7 +91,27 @@ function MediaPlayer(){
                 ))}
             </div>
 
-            {song && <audio ref={audioRef} src={song.src}></audio>}
+            {song && <audio
+                ref={audioRef}
+                src={song.src}
+                onTimeUpdate={handleTimeUpd}
+                onLoadedData={handleLoaded}
+            ></audio>}
+
+            {song && (
+                <input
+                    type='range'
+                    min='0'
+                    max={duration}
+                    value={currentTime}
+                    onChange={handleSeek}
+                    className='progress-bar'
+                />
+            )}
+            {song && (
+                <span>{formatTime(currentTime)} / {formatTime(duration)}</span>
+            )}
+            <img src={isPlaying ? pauseBtn : playBtn} className="play-btn" alt='play/pause' onClick={togglePlay}/>
 
         </div>
     </div>

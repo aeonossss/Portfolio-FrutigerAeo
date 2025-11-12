@@ -116,7 +116,6 @@
     user-select: none;  
     background:  linear-gradient(90deg, rgba(204, 232, 255, 0.75), rgba(216, 236, 249, 0.75));
     width: 60vw;
-    height: 60vh;
     border-radius: 6px;
     position: absolute;
     border: 0.5px solid #A6C3D9;
@@ -143,6 +142,7 @@
 .top-buttons{
     display: flex;
     flex-direction: row;
+    position: fixed;
 }
 
 .wmp-icon{
@@ -226,18 +226,30 @@
 }
 
 .window-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: 6px;
     background: linear-gradient(#CFFDFF 4%,#AEDDFA 15%,#E9F7F8 25%, #BFE8FE 85%, #94CAE2 100%);
     flex: none;
     margin: auto;
-    overflow: auto;
-    position: relative;
+    overflow: hidden;
     width: 95%;
-    height: 75%;
+    height: 70vh;
     margin: 10px;
 }
 
 .inner-content{
+    flex: 1;
     padding: 30px;
+    overflow-y: auto;
+}
+
+.bottom-content{
+    flex-shrink: 0; /* never shrink */
+    width: 100%;
+    background: #ccc; /* or whatever color */
+    text-align: center;
+    padding: 10px;
 }
 
