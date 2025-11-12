@@ -1,5 +1,5 @@
 import '../Styles/tab.css';
-import Home from '../Pages/Home.js'
+import Profile from '../Pages/Profile.js'
 import MediaPlayer from '../Pages/MediaPlayer.js'
 import { useState } from 'react';
 import wmpIcon from "../Assets/imgs/wmp.png";
@@ -9,10 +9,12 @@ import darkButton from "../Assets/imgs/dark-mode.png";
 import backButton from "../Assets/imgs/back-button.png";
 import forwardButton from "../Assets/imgs/fwd-button.png";
 import searchIcon from "../Assets/imgs/search.png";
+import chevronIcon from "../Assets/imgs/chevron.png";
+import downIcon from "../Assets/imgs/down.png";
 
 function Tab() {
   const icons = [
-    { id: 1, title: "Home", icon: homeIcon },
+    { id: 1, title: "Profile", icon: homeIcon },
     { id: 2, title: "Media Player", icon: wmpIcon },
   ];
 
@@ -93,13 +95,14 @@ function Tab() {
           onMinimize={handleMinimize}
           onMaximize={handleMaximize}
           onClose={handleClose}
+          openWindow={openWindow}
         />
       ))}
     </div>
   );
 }
 
-function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose }) {
+function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, openWindow }) {
   const [dragging, setDragging] = useState(false);
   const [start, setStart] = useState({ x: 0, y: 0 });
 
@@ -136,24 +139,32 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose }) {
       onMouseUp={handleMouseUp}
       onDragStart={(e) => e.preventDefault()}
     >
-    
-      <div
-        className="title-bar"
+      <div className='main-top-container'
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
       >
-        <div className="nav-buttons">
-          <img src={backButton} className='back-button'></img>
-          <img src={forwardButton} className='forward-button'></img>
-        </div>
-        <span>{window.title}</span>
-        <div className='search-bar'>
-            <img src={searchIcon} className='search' alt='Search Button'></img>
-        </div>
+        <span className='window-title'>{window.title}</span>
         <div className="controls">
-          <button className='minimize' onClick={() => onMinimize(window.id)}>_</button>
-          <button className='maximize' onClick={() => onMaximize(window.id)}>□</button>
-          <button className='exit' onClick={() => onClose(window.id)}>×</button>
+            <button className='minimize' onClick={() => onMinimize(window.id)}>_</button>
+            <button className='maximize' onClick={() => onMaximize(window.id)}>□</button>
+            <button className='exit' onClick={() => onClose(window.id)}>×</button>
+          </div>
+        <div className='title-bar'>
+          {!window.minimized && (
+            <div className='title-bar-container'>
+              <div className='nav-buttons'>
+                <img src={backButton} className='back-button' />
+                <img src={forwardButton} className='forward-button' />
+                <img src={downIcon} className='down-button' />
+              </div>
+              <div className='path-bar'>
+                <img src={chevronIcon} className='chevron' alt='dropdown Button' />
+              </div>
+              <div className='search-bar'>
+                <img src={searchIcon} className='search' alt='Search Button' />
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -164,8 +175,12 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose }) {
             <img src={darkButton} className='dark-button'alt='Dark Mode'></img>
             <div className='wmp-button'>
               <img src={wmpIcon} className='wmp-icon'></img>
-              <p className='wmp-title'>Media Player</p>
+              <p className='wmp-title' onClick={() => openWindow({id: 2, title:"Media Player", icon: wmpIcon})}>Media Player</p>
             </div>
+          </div>
+          <div className='inner-content'>
+            {window.title === "Media Player" && <MediaPlayer />}
+            {window.title === "Profile" && <Profile />}
           </div>
         </div>
       )}

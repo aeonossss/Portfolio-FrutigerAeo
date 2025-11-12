@@ -1,11 +1,8 @@
 .title-bar{
-    cursor: grab;
     position: relative;
     display: flex;
     align-items: center;
-    padding: 2px 6px;
     width: 100%;
-    padding-top:18px;
     padding-left: 20px;
     padding-right:20px;
     top: 0;
@@ -17,40 +14,100 @@
     border-top-right-radius: 6px;
 }
 
+.title-bar .controls:active{
+    cursor: grabbing;
+}
+.main-top-container{
+    width: 100%;
+    cursor: grab;
+    padding: 0;
+}
+.draggable-window.minimized{
+    background-color: #74A5D0 !important;
+    width: 300px !important;
+    height: 40px !important;
+    box-shadow: 0 4px 8px #2a293230 !important;
+    
+    justify-content: flex-start;
+}
+
+.window-content.minimized {
+  display: none;
+}
+
+.nav-buttons img:hover{
+    filter: brightness(1.1);
+}
 .nav-buttons{
     height: 20px;
-    width: 20px;
     gap: 5px;
     display: flex;
+    margin-right: 5px;
+    align-items: center;
+}
+
+.back-button, .forward-button{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.down-button{
+    width: 8px;
+    height: 5px;
+    cursor: pointer;
+    justify-content: center;
+    
+}
+
+.controls{
+    display: flex;
     flex-direction: row;
-    margin-right: 10px;
+    flex-shrink: 0;
+    align-items: center;
+    margin-left:auto;
+    margin-top: 5px;
+    margin-bottom: none;
+    max-width: 113px;
 }
 
 .controls button {
-    background: none;
     border: 1px solid #4C749C;
-    width: 2.5vw;
+    width: 30PX;
     height: 25px;
     color: #ffffff;
     font-size: 16px;
     cursor: pointer;
     padding-bottom: 2vh;
+    
 }
 
-.minimize button{
+.window-title {
+    font-size: 10px;
+    position: absolute;
+    z-index: 20;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.minimize {
     font-size: 20px;
     font-weight: bold;
     background: linear-gradient(90deg, #CCE8FF, #D8ECF9);
 }
 
-.maximize button{
+.maximize {
     font-size: 16px;
     font-weight: bold;
+    background: linear-gradient(90deg, #CCE8FF, #D8ECF9);
 }
 
-.exit button{
+.exit {
     font-size: 20px;
     font-weight: bold;
+    background: linear-gradient(90deg, #c84c4c, #ea7474);
 
 }
 
@@ -68,14 +125,19 @@
     display: flex;
     flex-direction: column;
     overflow: hidden   ;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding:0;
 }
 
-.draggable-window.minimized {
-    background: transparent;
-    box-shadow: none;
-    border: none;
+.title-bar-container{
+    display: flex;
+    width: 57vw;
+    padding: 5px 0px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px 6px 0 0;
+    flex:1;
 }
 
 .top-buttons{
@@ -93,7 +155,6 @@
     margin-left:40px;
     margin-top: 4px;
     display: flex;
-    flex-direction: row;
     color: #4C749C
 }
 
@@ -101,7 +162,7 @@
     filter: brightness(1.2);
 }
 
-.wmp-title-button{
+.wmp-title{
     font-size: 14px;
     margin-top:4px;
 }
@@ -134,28 +195,46 @@
     filter: brightness(1.2);
 }
 
-.search-bar{
+.window.title{
+    font-size: 16px;
+    font-weight: bold;
+    color: #4C749C;
+}
+
+.search-bar, .path-bar{
     background: #DDEFFB;
     border: solid #74A5D0;
     border-radius: 6px;
-    width: 40%;
     height: 30px;
     cursor: pointer;
+    flex-grow: 1;
 }
 
-.search{
+
+.search-bar{
+    flex-grow: 2;
+    margin-left: 2px;
+}
+
+.path-bar{
+    flex-grow: 3;
+    margin-right: 2px;
+}
+
+.search, .chevron {
     width: 24px;
-    height: 24px;
 }
 
 .window-content{
+    border-radius: 6px;
     background: linear-gradient(#CFFDFF 4%,#AEDDFA 15%,#E9F7F8 25%, #BFE8FE 85%, #94CAE2 100%);
     flex: none;
     margin: auto;
     overflow: auto;
-    display: relative;
+    position: relative;
     width: 95%;
     height: 75%;
+    margin: 10px;
 }
 
 

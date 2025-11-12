@@ -1,0 +1,13 @@
+.play-btn{
+    width: 30px;
+    height: 30px;
+}
+
+.song-list{
+    cursor: pointer;
+    color: #4C749C
+}
+
+.song-list p:hover{
+    text-decoration: underline;
+}
