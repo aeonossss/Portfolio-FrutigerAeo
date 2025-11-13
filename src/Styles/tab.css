@@ -142,7 +142,6 @@
 .top-buttons{
     display: flex;
     flex-direction: row;
-    position: fixed;
 }
 
 .wmp-icon{
@@ -231,25 +230,62 @@
     flex-direction: column;
     border-radius: 6px;
     background: linear-gradient(#CFFDFF 4%,#AEDDFA 15%,#E9F7F8 25%, #BFE8FE 85%, #94CAE2 100%);
-    flex: none;
+    flex: 1;
     margin: auto;
     overflow: hidden;
     width: 95%;
-    height: 70vh;
     margin: 10px;
+    box-sizing: border-box;
 }
 
-.inner-content{
+.inner-parent-container{
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 100px);
+    position: relative;
+    overflow: hidden;
+}
+
+.left-content::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.left-content::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 6px;
+}
+
+.left-content::-webkit-scrollbar-thumb {
+  background:  linear-gradient( rgba(84, 131, 168, 0.562), rgba(142, 170, 188, 0.54));
+  border-radius: 6px;
+}
+
+.left-content::-webkit-scrollbar-thumb:hover {
+  background: #79adbb;
+}
+
+.left-content{
+    display: flex;
     flex: 1;
-    padding: 30px;
+    padding: 5px 30px;
     overflow-y: auto;
+    border: 1px solid #74A5D0;
 }
 
 .bottom-content{
-    flex-shrink: 0; /* never shrink */
+    position: relative;
+    flex-shrink: 0;
     width: 100%;
-    background: #ccc; /* or whatever color */
+    height: 80px;
+    background:  linear-gradient( rgba(237, 247, 255, 0.352), rgba(189, 209, 222, 0.275));
     text-align: center;
-    padding: 10px;
+    box-sizing: border-box;
+}
+
+.right-content{
+    width: 400px;
+    background: white;
+    border: 1px solid #74A5D0;
 }
 

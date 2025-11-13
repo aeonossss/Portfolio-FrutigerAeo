@@ -1,6 +1,9 @@
 import '../Styles/tab.css';
 import Profile from '../Pages/Profile.js'
 import MediaPlayer from '../Pages/MediaPlayer.js'
+import MediaPlayerRC from '../Pages/MediaPlayerRC.js'
+import MediaPlayerBC from '../Pages/MediaPlayerBC.js'
+import { useAudioPlayer } from '../Pages/MediaPlayerLogic.js';
 import { useState } from 'react';
 import wmpIcon from "../Assets/imgs/wmp.png";
 import homeIcon from "../Assets/imgs/vista_info.ico";
@@ -11,6 +14,7 @@ import forwardButton from "../Assets/imgs/fwd-button.png";
 import searchIcon from "../Assets/imgs/search.png";
 import chevronIcon from "../Assets/imgs/chevron.png";
 import downIcon from "../Assets/imgs/down.png";
+
 
 function Tab() {
   const icons = [
@@ -106,6 +110,8 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
   const [dragging, setDragging] = useState(false);
   const [start, setStart] = useState({ x: 0, y: 0 });
 
+  const player = useAudioPlayer();
+
   const handleMouseDown=(e)=>{
     setDragging(true);
     setStart({ x: e.clientX, y: e.clientY });
@@ -171,9 +177,6 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
       {!window.minimized && (
         <div className="window-content">
 
-          {/*INNER CONTENT*/}
-          <div className='inner-content'>
-            {/*TOP BUTTONS*/}
           <div className='top-buttons'>
             <img src={lightButton} className='light-button'alt='Light Mode'></img>
             <img src={darkButton} className='dark-button'alt='Dark Mode'></img>
@@ -182,13 +185,20 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
               <p className='wmp-title' onClick={() => openWindow({id: 2, title:"Media Player", icon: wmpIcon})}>Media Player</p>
             </div>
           </div>
-            {window.title === "Media Player" && <MediaPlayer />}
-            {window.title === "Profile" && <Profile />}
-          </div>
 
-          {/*BOTTOM CONTENT*/}
+          <div className='inner-parent-container'>
+            <div className='left-content'>
+              {window.title === "Media Player" && <MediaPlayer player={player} />}
+              {window.title === "Profile" && <Profile />}
+            </div>
+
+            <div className='right-content'>
+              {window.title === "Media Player" && <MediaPlayerRC player={player} />}
+            </div>
+          </div>
           <div className='bottom-content'>
-            <h1>bottom content</h1>
+            {window.title === "Media Player" && <MediaPlayerBC player={player} />}
+
           </div>
         </div>
       )}
