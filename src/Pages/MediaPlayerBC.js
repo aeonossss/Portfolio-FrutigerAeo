@@ -2,7 +2,7 @@ import playBtn from '../Assets/imgs/playbutton.png';
 import pauseBtn from '../Assets/imgs/pausebutton.png';
 import backBtn from '../Assets/imgs/back-button.png';
 import fwdBtn from '../Assets/imgs/fwd-button.png';
-import '../Styles/mediaPlayer.css'
+import '../Styles/mediaPlayer.css';
 
 export default function MediaPlayerBC({ player }) {
   const {
@@ -16,8 +16,7 @@ export default function MediaPlayerBC({ player }) {
     handleLoaded,
     handleSeek,
     togglePlay,
-  }
-  = player;
+  } = player;
 
   if (!song) return null;
 
@@ -36,25 +35,24 @@ export default function MediaPlayerBC({ player }) {
         min="0"
         max={duration}
         value={currentTime}
-        onChange={(e) => handleSeek(e.target.value)}
+        onChange={(e) => handleSeek(Number(e.target.value))}
         className="progress-bar"
         style={{
-            '--progress': `${currentTime/duration}*100%`
+          '--progress': `${(currentTime / duration) * 100}%`
         }}
       />
-    
-    <div className='ui-btns'>
+
+      <div className="ui-btns">
         <img
-        src={isPlaying ? pauseBtn : playBtn}
-        className="play-btn"
-        alt="play/pause"
-        onClick={togglePlay}
-      />
-    </div>
+          src={isPlaying ? pauseBtn : playBtn}
+          className="play-btn"
+          alt="play/pause"
+          onClick={togglePlay}
+        />
+      </div>
 
       <span>{formatTime(currentTime)} / {formatTime(duration)}</span>
 
-      
     </div>
   );
 }
