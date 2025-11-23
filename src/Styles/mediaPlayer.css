@@ -21,29 +21,89 @@
 }
 
 .progress-bar{
-    width: 95%;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    width: 98%;
     height: 5px;
     border-radius: 6px;
     margin-bottom: 6px;
-    appearance: none;
-    background: #d4d9dd;
+    background-color: #ccc;
+    outline: 1px solid #9292b1;
 }
 
-input[type=range]::-webkit-slider-thumb{
+.progress-bar::-webkit-slider-thumb:hover{
+    cursor: grab;
+    filter: brightness(1.2);
+}
+
+.progress-bar::-webkit-slider-thumb:active{
+    cursor: grabbing;
+}
+
+
+.progress-bar::-webkit-slider-thumb{
+    position: relative;
     appearance: none;
-    width: 13px;
-    height: 6px;
+    width: 20px;
+    z-index: 10;
+    height: 10px;
+    margin-top: -1.5px;
     border-radius: 6px;
     border: 1px solid #000091;
     background: linear-gradient(180deg, #004C91 50%,#48D3EF 100%);
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+.progress-bar::-webkit-slider-runnable-track {
   height: 5px;
   border-radius: 6px;
   background: linear-gradient(
     to right,
-    #004C91 50%,
-    #48D3EF var(--progress, 100%)
-  );
+    #004C91 0,
+    #48D3EF var(--progress),
+    #d6ecff var(--progress),
+    #d6ecff 100%
+  )
 }
+
+.duration{
+    font-size: 12px;
+    color: #262181;
+    margin-bottom: 5px;
+}
+
+.right-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-player-rc-ui{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+
+.cover-art{
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 4px 8px #2a293230 !important;
+    margin-bottom: 10px;
+}
+
+.song-title{
+    font-size: 16px;
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+    margin: 0;
+    width: 150px}
+
+.song-title:hover{
+    color: #4C749C;
+    cursor: default;
+}
+

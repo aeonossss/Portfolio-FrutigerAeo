@@ -51,7 +51,7 @@ export default function MediaPlayerBC({ player }) {
         />
       </div>
 
-      <span>{formatTime(currentTime)} / {formatTime(duration)}</span>
+      <span className='duration'>{formatTime(currentTime)} | {formatTime(duration)}</span>
 
     </div>
   );

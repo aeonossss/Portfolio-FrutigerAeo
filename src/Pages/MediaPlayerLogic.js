@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import aquaticAmbience from "../Assets/audios/aquaticAmbience.mp3";
+import scizzie from "../Assets/audios/aquaticAmbience.mp3";
 import wiiparty from '../Assets/audios/Wii Party - Main Menu.mp3';
 import flim from '../Assets/audios/Aphex Twin - Flim.mp3';
 import lnbm from '../Assets/audios/Laura Shigihara - Loonboon.mp3';
@@ -11,16 +11,16 @@ import xplo from '../Assets/audios/Xploshi - Logging in.mp3';
 import lease from '../Assets/audios/Takeshi Abo - LEASE.mp3';
 
 export const songs = [
-  { title: "Lease - Takeshi Abo", src: lease },
-  { title: "Aquatic Ambience - Scizzie", src: aquaticAmbience },
-  { title: "Wii Party - Main Menu", src: wiiparty },
   { title: "Aphex Twin - Flim", src: flim },
-  { title: "Loonboon - Laura Shigihara", src: lnbm },
+  { title: "Aquatic Ambience - Scizzie", src: scizzie },
   { title: "Aquatic Ambience [Restored] - Donkey Kong", src: aqtc },
-  { title: "Zombies On Your Lawn (Instrumental) - Laura Shigihara", src: onyolawn },
-  { title: "Shop Theme - Nintendo DSi", src: shop },
   { title: "Friday Theme - Roblox 3008 OST", src: friday },
+  { title: "Lease - Takeshi Abo", src: lease },
+  { title: "Loonboon - Laura Shigihara", src: lnbm },
   { title: "Logging in - Xploshi", src: xplo },
+  { title: "Shop Theme - Nintendo DSi", src: shop },
+  { title: "Wii Party - Main Menu", src: wiiparty },
+  { title: "Zombies On Your Lawn (Instrumental) - Laura Shigihara", src: onyolawn },
 ];
 
 export function useAudioPlayer() {

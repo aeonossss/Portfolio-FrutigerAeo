@@ -135,7 +135,8 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
 
   return (
     <div
-      className={`draggable-window ${window.minimized ? 'minimized' : ''}`}
+      className={`draggable-window  ${window.minimized ? 'minimized' : ''}
+                                    ${window.maximized ? 'maximized' : ''}`}
       style={{ top: window.maximized ? 0 : window.y,
                left: window.maximized ? 0 : window.x,
                width: window.maximized ? '100vw' : '70vw',
@@ -178,21 +179,33 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
         <div className="window-content">
 
           <div className='top-buttons'>
-            <img src={lightButton} className='light-button'alt='Light Mode'></img>
-            <img src={darkButton} className='dark-button'alt='Dark Mode'></img>
-            <div className='wmp-button'>
+            <img src={lightButton} className='light-button' alt='Light Mode'/>
+            <img src={darkButton} className='dark-button' alt='Dark Mode'/>
+            <div className='divider'>|</div>
+            <div className='tab-buttons'>
+              {window.title === "Profile" && (
+              <div className='wmp-button'>
               <img src={wmpIcon} className='wmp-icon'></img>
               <p className='wmp-title' onClick={() => openWindow({id: 2, title:"Media Player", icon: wmpIcon})}>Media Player</p>
             </div>
+            )}
+            {window.title === "Media Player" && (
+              <div className='profile-button'>
+              <img src={homeIcon} className='profile-icon'></img>
+              <p className='profile-' onClick={() => openWindow({id: 1, title:"Profile", icon: homeIcon})}>Profile</p>
+            </div>
+            )}
+            </div>
           </div>
+          
 
           <div className='inner-parent-container'>
-            <div className='left-content'>
+            <div className={`left-content ${window.maximized ? 'maximized' : ''}`}>
               {window.title === "Media Player" && <MediaPlayer player={player} />}
-              {window.title === "Profile" && <Profile />}
+              {window.title === "Profile" && <Profile maximized={window.maximized} />}
             </div>
 
-            <div className='right-content'>
+            <div className={`right-content ${window.maximized ? 'maximized' : ''}`}>
               {window.title === "Media Player" && <MediaPlayerRC player={player} />}
             </div>
           </div>
