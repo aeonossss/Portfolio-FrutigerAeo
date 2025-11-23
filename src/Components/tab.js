@@ -1,10 +1,11 @@
 import '../Styles/tab.css';
-import Profile from '../Pages/Profile.js'
+import { useState } from 'react';
+import { useAudioPlayer } from '../Pages/MediaPlayerLogic.js';
 import MediaPlayer from '../Pages/MediaPlayer.js'
 import MediaPlayerRC from '../Pages/MediaPlayerRC.js'
 import MediaPlayerBC from '../Pages/MediaPlayerBC.js'
-import { useAudioPlayer } from '../Pages/MediaPlayerLogic.js';
-import { useState } from 'react';
+import Profile from '../Pages/Profile.js';
+import ProfileRC from '../Pages/ProfileRC.js';
 import wmpIcon from "../Assets/imgs/wmp.png";
 import homeIcon from "../Assets/imgs/vista_info.ico";
 import lightButton from "../Assets/imgs/light-mode.png";
@@ -200,18 +201,21 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
           
 
           <div className='inner-parent-container'>
-            <div className={`left-content ${window.maximized ? 'maximized' : ''}`}>
+            <div className={`left-content ${window.maximized ? 'maximized' : ''}
+                                    ${window.title === "Profile" ? 'profile' : ''}`}>
               {window.title === "Media Player" && <MediaPlayer player={player} />}
               {window.title === "Profile" && <Profile maximized={window.maximized} />}
             </div>
 
-            <div className={`right-content ${window.maximized ? 'maximized' : ''}`}>
+            <div className={`right-content 
+                              ${window.maximized ? 'maximized' : ''}
+                              ${window.title === "Profile" ? 'profile' : ''}`}>
               {window.title === "Media Player" && <MediaPlayerRC player={player} />}
+              {window.title === "Profile" && <ProfileRC />}
             </div>
           </div>
           <div className='bottom-content'>
             {window.title === "Media Player" && <MediaPlayerBC player={player} />}
-
           </div>
         </div>
       )}

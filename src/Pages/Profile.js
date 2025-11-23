@@ -13,7 +13,7 @@ function Profile({maximized}){
                     className="profile-pic"
                 />
                 <p className='developer'> Eya Isabel Yalung</p>
-                <p className='dev-title'> Front-end Developer </p>
+                <p className='dev-title'> Front-End Developer </p>
                 <div className='icon-links'>
                     <a href='https://www.linkedin.com/in/e-yalung/' target='_blank' rel='noopener noreferrer'>
                         <img src={lnkdn} alt='linkedin-link'/>
