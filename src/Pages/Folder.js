@@ -1,11 +1,10 @@
 import '../Styles/folder.css';
-import folder from '../Assets/imgs/folder.png';
 
 
 function Folder(){
     return(
         <div>
-            
+            <p1 className='folder-placeholder-text'>Portfolio Page Coming Soon!</p1>
         </div>
     )
 }

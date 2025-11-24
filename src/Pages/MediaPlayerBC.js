@@ -1,7 +1,5 @@
 import playBtn from '../Assets/imgs/playbutton.png';
 import pauseBtn from '../Assets/imgs/pausebutton.png';
-import backBtn from '../Assets/imgs/back-button.png';
-import fwdBtn from '../Assets/imgs/fwd-button.png';
 import '../Styles/mediaPlayer.css';
 
 export default function MediaPlayerBC({ player }) {

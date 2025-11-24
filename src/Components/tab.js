@@ -220,7 +220,8 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
                               ${window.maximized ? 'maximized' : ''}
                               ${window.title === "Profile" ? 'profile' : ''}
                               ${window.title === "Portfolio" ? 'folder' : ''}
-                              ${window.title === "Media Player" ? 'wmp' : ''}`}>
+                              ${window.title === "Media Player" ? 'wmp' : ''}
+                              ${window.title === "Folder" ? 'folder' : ''}`}>
               {window.title === "Media Player" && <MediaPlayerRC player={player} maximized={window.maximized} />}
               {window.title === "Profile" && <ProfileRC />}
               {window.title === "Portfolio" && <FolderRC />}
