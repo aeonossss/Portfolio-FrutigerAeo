@@ -60,6 +60,8 @@
     height: 25px;
     cursor: pointer;
     justify-content: center;
+    
+    cursor: not-allowed;
 }
 
 .down-button{
@@ -132,15 +134,18 @@
     z-index: 10;
     display: flex;
     flex-direction: column;
-    overflow: hidden   ;
+    overflow: hidden;
     justify-content: flex-start;
     align-items: center;
     padding:0;
+    max-width: 99.9vw;
+    max-height: 99.5vh;
+    box-sizing: border-box;
 }
 
 .title-bar-container{
     display: flex;
-    width: 57vw;
+    width: 100%;
     padding: 5px 0px;
     align-items: center;
     justify-content: space-between;
@@ -247,6 +252,7 @@
 
 .path-bar img, .search-bar img{
     margin-left: 5px;
+    cursor: not-allowed;
 }
 
 .window-content{
@@ -258,7 +264,7 @@
     flex: 1;
     margin: auto;
     overflow: hidden;
-    width: 95%;
+    width: 95.5%;
     height: 100%;
     margin: 10px;
     box-sizing: border-box;
@@ -270,6 +276,7 @@
     height: calc(100% - 100px);
     position: relative;
     overflow: hidden;
+    min-height: 0;
 }
 
 .left-content::-webkit-scrollbar {
@@ -300,10 +307,13 @@
 }
 
 .left-content.maximized{
-    overflow: visible;
+    overflow: hidden !important;
 }
 
 .bottom-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     position: relative;
     flex-shrink: 0;
     width: 100%;
@@ -314,8 +324,27 @@
 }
 
 .right-content{
-    width: 400px;
+    width: 450px;
     background: white;
     border: 1px solid #74A5D0;
+    overflow-y: auto;
 }
 
+.right-content::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.right-content::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 6px;
+}
+
+.right-content::-webkit-scrollbar-thumb {
+    background:  linear-gradient( rgba(84, 131, 168, 0.562), rgba(142, 170, 188, 0.54));
+    border-radius: 6px;
+}
+
+.right-content::-webkit-scrollbar-thumb:hover {
+    background: #79adbb;
+}

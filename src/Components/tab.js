@@ -6,6 +6,7 @@ import MediaPlayerRC from '../Pages/MediaPlayerRC.js'
 import MediaPlayerBC from '../Pages/MediaPlayerBC.js'
 import Profile from '../Pages/Profile.js';
 import ProfileRC from '../Pages/ProfileRC.js';
+import ProfileBC from '../Pages/ProfileBC.js';
 import wmpIcon from "../Assets/imgs/wmp.png";
 import homeIcon from "../Assets/imgs/vista_info.ico";
 import lightButton from "../Assets/imgs/light-mode.png";
@@ -201,8 +202,9 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
           
 
           <div className='inner-parent-container'>
-            <div className={`left-content ${window.maximized ? 'maximized' : ''}
-                                    ${window.title === "Profile" ? 'profile' : ''}`}>
+            <div className={`left-content
+                              ${window.maximized ? 'maximized' : ''}
+                              ${window.title === "Profile" ? 'profile' : ''}`}>
               {window.title === "Media Player" && <MediaPlayer player={player} />}
               {window.title === "Profile" && <Profile maximized={window.maximized} />}
             </div>
@@ -216,6 +218,7 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
           </div>
           <div className='bottom-content'>
             {window.title === "Media Player" && <MediaPlayerBC player={player} />}
+            {window.title === "Profile" && <ProfileBC />}
           </div>
         </div>
       )}
