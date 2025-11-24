@@ -1,6 +1,7 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './Pages/Home';
 import MediaPlayer from './Pages/MediaPlayer';
+import Folder from './Pages/Folder';
 
 function Navigator(){
     return (
