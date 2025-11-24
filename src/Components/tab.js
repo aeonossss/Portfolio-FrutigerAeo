@@ -166,9 +166,9 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
           {!window.minimized && (
             <div className='title-bar-container'>
               <div className='nav-buttons'>
-                <img src={backButton} className='back-button' />
-                <img src={forwardButton} className='forward-button' />
-                <img src={downIcon} className='down-button' />
+                <img src={backButton} alt='back-button' className='back-button' />
+                <img src={forwardButton} alt='forward-button' className='forward-button' />
+                <img src={downIcon} alt='down-button' className='down-button' />
               </div>
               <div className='path-bar'>
                 <img src={chevronIcon} className='chevron' alt='dropdown Button' />
@@ -191,13 +191,13 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
             <div className='tab-buttons'>
               {window.title === "Profile" && (
               <div className='wmp-button'>
-              <img src={wmpIcon} className='wmp-icon'></img>
+              <img src={wmpIcon} alt='wmp-icon' className='wmp-icon'></img>
               <p className='wmp-title' onClick={() => openWindow({id: 2, title:"Media Player", icon: wmpIcon})}>Media Player</p>
             </div>
             )}
             {window.title === "Media Player" && (
               <div className='profile-button'>
-              <img src={homeIcon} className='profile-icon'></img>
+              <img src={homeIcon} alt='home-icon' className='profile-icon'></img>
               <p className='profile-' onClick={() => openWindow({id: 1, title:"Profile", icon: homeIcon})}>Profile</p>
             </div>
             )}
