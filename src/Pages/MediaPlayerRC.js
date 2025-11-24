@@ -11,7 +11,7 @@ import wiiparty from "../Assets/cover/wiiparty.jpg";
 import '../Styles/mediaPlayer.css';
 
 
-function MediaPlayerRC({ player }) {
+function MediaPlayerRC({ player,  maximized }) {
     const { song } = player;
 
     const covers = [
@@ -30,7 +30,7 @@ function MediaPlayerRC({ player }) {
     if (!song){ 
         return (
             <div>
-                Untitled
+                No Song Selected.
             </div>
         );
     }
@@ -39,8 +39,8 @@ function MediaPlayerRC({ player }) {
 
     return (
             <div className="media-player-rc-ui">
-                <img src={cover} alt={song.title} className="cover-art" />
-                <p className="song-title">{song.title}</p>
+                <img src={cover} alt={song.title} className="cover-art" style={{transform: maximized ? 'scale(2)' : 'scale(1)'}} />
+                <p className="song-title" style={{transform: maximized ? 'scale(1.5)' : 'scale(1)'}}>{song.title}</p>
             </div>
     );
 }

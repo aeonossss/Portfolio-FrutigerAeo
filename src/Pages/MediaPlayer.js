@@ -1,7 +1,7 @@
 import '../Styles/mediaPlayer.css';
 
 export default function MediaPlayer({ player }) {
-  const { songs, selectSong, song } = player;
+  const { songs, selectSong } = player;
 
   return (
     <div className="song-list">

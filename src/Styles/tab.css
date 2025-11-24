@@ -304,10 +304,14 @@
     padding: 5px 30px;
     overflow-y: auto;
     border: 1px solid #74A5D0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
 
 .left-content.maximized{
-    overflow: hidden !important;
+    overflow-y: hidden !important;
 }
 
 .bottom-content{

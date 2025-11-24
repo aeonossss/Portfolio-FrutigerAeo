@@ -9,6 +9,8 @@ import ProfileRC from '../Pages/ProfileRC.js';
 import ProfileBC from '../Pages/ProfileBC.js';
 import wmpIcon from "../Assets/imgs/wmp.png";
 import homeIcon from "../Assets/imgs/vista_info.ico";
+import folder from "../Assets/imgs/folder.png";
+import FolderRC from '../Pages/FolderRC.js';
 import lightButton from "../Assets/imgs/light-mode.png";
 import darkButton from "../Assets/imgs/dark-mode.png";
 import backButton from "../Assets/imgs/back-button.png";
@@ -16,12 +18,14 @@ import forwardButton from "../Assets/imgs/fwd-button.png";
 import searchIcon from "../Assets/imgs/search.png";
 import chevronIcon from "../Assets/imgs/chevron.png";
 import downIcon from "../Assets/imgs/down.png";
+import Folder from '../Pages/Folder.js';
 
 
 function Tab() {
   const icons = [
     { id: 1, title: "Profile", icon: homeIcon },
     { id: 2, title: "Media Player", icon: wmpIcon },
+    { id: 3, title: "Portfolio", icon: folder },
   ];
 
   const [windows, setWindows] = useState([]);
@@ -204,16 +208,22 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
           <div className='inner-parent-container'>
             <div className={`left-content
                               ${window.maximized ? 'maximized' : ''}
-                              ${window.title === "Profile" ? 'profile' : ''}`}>
+                              ${window.title === "Profile" ? 'profile' : ''}
+                              ${window.title === "Portfolio" ? 'folder' : ''}
+                              ${window.title === "Media Player" ? 'wmp' : ''}`}>
               {window.title === "Media Player" && <MediaPlayer player={player} />}
               {window.title === "Profile" && <Profile maximized={window.maximized} />}
+              {window.title === "Portfolio" && <Folder />}
             </div>
 
             <div className={`right-content 
                               ${window.maximized ? 'maximized' : ''}
-                              ${window.title === "Profile" ? 'profile' : ''}`}>
-              {window.title === "Media Player" && <MediaPlayerRC player={player} />}
+                              ${window.title === "Profile" ? 'profile' : ''}
+                              ${window.title === "Portfolio" ? 'folder' : ''}
+                              ${window.title === "Media Player" ? 'wmp' : ''}`}>
+              {window.title === "Media Player" && <MediaPlayerRC player={player} maximized={window.maximized} />}
               {window.title === "Profile" && <ProfileRC />}
+              {window.title === "Portfolio" && <FolderRC />}
             </div>
           </div>
           <div className='bottom-content'>
