@@ -18,6 +18,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: flex-start;
+    z-index: 0;
 }
 
 .icon {
@@ -42,7 +43,35 @@
     height: 40px;
 }
 
-
 .icon:hover {
     filter: brightness(1.2);
+}
+
+.responsive-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(#DFFFA5 0%,#ACDB6B 48%,#7AB53E 74%, #7ad336 100%);
+    box-shadow: 0px 0px 15px #819c58;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    cursor:default;
+}
+
+@media (max-width: 1000px) {
+  .responsive-banner {
+    display: block;
+  }
+}
+
+.ok-button{
+    cursor: pointer;
+    padding: 0 10px 0 10px;
+    margin-left: 5px;
+    
 }
