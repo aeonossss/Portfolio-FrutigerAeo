@@ -1,12 +1,17 @@
 import '../Styles/folder.css';
-import folder from '../Assets/imgs/folder.png';
+import folder from '../Assets/imgs/folder.webp';
+
 function FolderRC() {
     return(
-        <div>
+        <div className='folder-container'>
             <ul className='folder-list'>
-                <li>
+                <li className='folder-one'>
                     <img src={folder} alt='Folder Icon' className='folder-icon'/>
-                    <p className='folder-text'> SubFolder </p>
+                    <p className='folder-text'> Folder 1 </p>
+                </li>
+                <li className='folder-one'>
+                    <img src={folder} alt='Folder Icon' className='folder-two'/>
+                    <p className='folder-text'> Folder 2 </p>
                 </li>
             </ul>
         </div>

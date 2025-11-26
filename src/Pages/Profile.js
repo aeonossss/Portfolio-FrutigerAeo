@@ -1,12 +1,18 @@
-import me from '../Assets/imgs/me.jpg';
-import lnkdn from '../Assets/imgs/lnkdn.png';
-import guthib from '../Assets/imgs/guthib.png';
+import me from '../Assets/imgs/me.webp';
+import lnkdn from '../Assets/imgs/lnkdn.webp';
+import guthib from '../Assets/imgs/guthib.webp';
 import '../Styles/profile.css';
 
 function Profile({maximized}){
     return(
-        <div>
-            <div className="profile-container" style={{ transform: maximized ? "scale(1.5)" : "scale(1)" }}>
+        <div 
+            className='profile-outer-container' 
+            style={{ 
+                transform: maximized ? "scale(1.1)" : "",
+                
+            }}
+        >
+            <div className="profile-container">
                 <img
                     src={me}
                     alt="Profile"

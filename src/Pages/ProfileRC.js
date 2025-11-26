@@ -1,14 +1,14 @@
 import '../Styles/profile.css';
-import rct from '../Assets/imgs/Reactlogo.png';
-import fltr from '../Assets/imgs/flutterlogo.png';
-import drt from '../Assets/imgs/dartlogo.png';
-import ai from '../Assets/imgs/AILogo.png';
-import ps from '../Assets/imgs/PSLogo.png';
-import figma from '../Assets/imgs/figma.png';
-import csp from '../Assets/imgs/csp.png';
-import prc from '../Assets/imgs/procreate.png';
-import vs from '../Assets/imgs/vscode.png';
-import ard from '../Assets/imgs/androidstudio.png';
+import rct from '../Assets/imgs/Reactlogo.webp';
+import fltr from '../Assets/imgs/flutterlogo.webp';
+import drt from '../Assets/imgs/dartlogo.webp';
+import ai from '../Assets/imgs/AILogo.webp';
+import ps from '../Assets/imgs/PSLogo.webp';
+import figma from '../Assets/imgs/figma.webp';
+import csp from '../Assets/imgs/csp.webp';
+import prc from '../Assets/imgs/procreate.webp';
+import vs from '../Assets/imgs/vscode.webp';
+import ard from '../Assets/imgs/androidstudio.webp';
 
 function ProfileRC(){
     return(
@@ -18,6 +18,7 @@ function ProfileRC(){
             <p className='about'>
                 Creative and detail-oriented Graphic and Web Designer/Developer with a passion for crafting engaging 2D/3D designs and building websites that are both functional and user-friendly. Known for blending design sensibility with technical expertise to create meaningful digital experiences. Continuously expanding skills through hands-on projects and On-the-Job Training (OJT) / internship experiences, bringing curiosity and dedication to every project.
             </p>
+            <br></br>
             <div className='inner-content'>
                 <div className='left-inner-content'>
                     <p className='skills-title'>Skills</p>

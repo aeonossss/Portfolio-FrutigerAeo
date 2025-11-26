@@ -1,13 +1,13 @@
-import nocover from '../Assets/cover/default.jpg';
-import scizzie from "../Assets/cover/scizzie.png";
-import flim from "../Assets/cover/flim.jpg";
-import donkey from "../Assets/cover/aqtc.jpg";
-import pvz from "../Assets/cover/pvz.jpg";
-import friday from "../Assets/cover/friday.png";
-import lease from "../Assets/cover/lease.jpg";
-import xplo from "../Assets/cover/xplo.jpg";
-import shop from "../Assets/cover/shop.jpg";
-import wiiparty from "../Assets/cover/wiiparty.jpg";
+import nocover from '../Assets/cover/default.webp';
+import scizzie from "../Assets/cover/scizzie.webp";
+import flim from "../Assets/cover/flim.webp";
+import donkey from "../Assets/cover/aqtc.webp";
+import pvz from "../Assets/cover/pvz.webp";
+import friday from "../Assets/cover/friday.webp";
+import lease from "../Assets/cover/lease.webp";
+import xplo from "../Assets/cover/xplo.webp";
+import shop from "../Assets/cover/shop.webp";
+import wiiparty from "../Assets/cover/wiiparty.webp";
 import '../Styles/mediaPlayer.css';
 
 
@@ -39,8 +39,14 @@ function MediaPlayerRC({ player,  maximized }) {
 
     return (
             <div className="media-player-rc-ui">
-                <img src={cover} alt={song.title} className="cover-art" style={{transform: maximized ? 'scale(2)' : 'scale(1)'}} />
-                <p className="song-title" style={{transform: maximized ? 'scale(1.5)' : 'scale(1)'}}>{song.title}</p>
+                <img src={cover} alt={song.title} className="cover-art" style={{transform: maximized ? 'scale(1.5)' : ''}} />
+                <p className="song-title"
+                    style={{
+                        transform: maximized ? 'scale(1.5)' : '',
+                        marginTop: maximized ? '50px' : ''
+                    }}>
+                    {song.title}
+                </p>
             </div>
     );
 }

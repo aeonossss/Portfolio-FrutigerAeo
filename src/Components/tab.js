@@ -7,17 +7,17 @@ import MediaPlayerBC from '../Pages/MediaPlayerBC.js'
 import Profile from '../Pages/Profile.js';
 import ProfileRC from '../Pages/ProfileRC.js';
 import ProfileBC from '../Pages/ProfileBC.js';
-import wmpIcon from "../Assets/imgs/wmp.png";
-import homeIcon from "../Assets/imgs/vista_info.ico";
-import folder from "../Assets/imgs/folder.png";
+import wmpIcon from "../Assets/imgs/wmp.webp";
+import homeIcon from "../Assets/imgs/vista_info.webp";
+import folder from "../Assets/imgs/folder.webp";
 import FolderRC from '../Pages/FolderRC.js';
-import lightButton from "../Assets/imgs/light-mode.png";
-import darkButton from "../Assets/imgs/dark-mode.png";
-import backButton from "../Assets/imgs/back-button.png";
-import forwardButton from "../Assets/imgs/fwd-button.png";
-import searchIcon from "../Assets/imgs/search.png";
-import chevronIcon from "../Assets/imgs/chevron.png";
-import downIcon from "../Assets/imgs/down.png";
+import lightButton from "../Assets/imgs/light-mode.webp";
+import darkButton from "../Assets/imgs/dark-mode.webp";
+import backButton from "../Assets/imgs/back-button.webp";
+import forwardButton from "../Assets/imgs/fwd-button.webp";
+import searchIcon from "../Assets/imgs/search.webp";
+import chevronIcon from "../Assets/imgs/chevron.webp";
+import downIcon from "../Assets/imgs/down.webp";
 import Folder from '../Pages/Folder.js';
 
 
@@ -211,7 +211,7 @@ function DraggableWindow({ window, onDrag, onMinimize, onMaximize, onClose, open
                               ${window.title === "Profile" ? 'profile' : ''}
                               ${window.title === "Portfolio" ? 'folder' : ''}
                               ${window.title === "Media Player" ? 'wmp' : ''}`}>
-              {window.title === "Media Player" && <MediaPlayer player={player} />}
+              {window.title === "Media Player" && <MediaPlayer player={player} maximized={window.maximized} />}
               {window.title === "Profile" && <Profile maximized={window.maximized} />}
               {window.title === "Portfolio" && <Folder />}
             </div>

@@ -1,5 +1,5 @@
 import '../Styles/profile.css';
-import globe from '../Assets/imgs/globe.png';
+import globe from '../Assets/imgs/globe.webp';
 
 function ProfileBC(){
     return <div>

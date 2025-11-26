@@ -1,11 +1,20 @@
 .profile-container{
+    flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     min-height: 100%;
     box-sizing: border-box;
-    overflow: visible;
+    overflow-y: auto;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
+
+.profile-outer-container{
+    margin-top: 15vh;
+    transform: scale(1.35);
 }
 
 .profile-pic {
@@ -46,11 +55,13 @@
     margin-top: 8px;
 }
 
+
 .left-content.profile{
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
-    overflow-y: visible;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .right-content.profile{
@@ -98,7 +109,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
-  text-align: left !important;
 }
 
 @keyframes shine {
@@ -136,15 +146,13 @@
 }
 
 .skills-list li:hover{
-    transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
-    font-weight: bold;
     color: #fff;
     background: linear-gradient(90deg, #008cff, #66ff00, #00ffff, #008cff, #66ff00);
     background-size: 400% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 2s linear infinite;
+    filter: drop-shadow(0 0 5px #88bebe) brightness(1.25);
 }
 
 
@@ -167,7 +175,7 @@
 .sftware-list img:hover{
     transform: scale(1.3);
     transition: transform 0.2s ease-in-out;
-    filter: drop-shadow(0 0 5px #859191) brightness(1.25);
+    filter: drop-shadow(0 0 2px #a5a5a5) brightness(1.25);
 
 }
 
