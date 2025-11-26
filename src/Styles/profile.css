@@ -120,7 +120,7 @@
     font-size: 18px;
     font-weight: bold;
     color: #5AB050;
-    margin: 10px 0 5px 0;
+    margin: 10px 0 10px 0;
     padding: 0 25px 0 25px;
     background: #BDFFB2;
     width: fit-content;
@@ -133,7 +133,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    gap: 10px;
     padding-left: 0;
 }
 
@@ -162,7 +162,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     padding-left: 0;
     margin: 0;
 }
@@ -182,7 +182,7 @@
 .sftware-list img{
     width: 50px;
     height: 50px;
-    margin: 16px 10px 0 10px;
+    margin: 15px;
 }
 
 .sftware-title{

@@ -8,7 +8,7 @@ function Profile({maximized}){
         <div 
             className='profile-outer-container' 
             style={{ 
-                transform: maximized ? "scale(1.1)" : "",
+                transform: maximized ? "scale(1.5)" : "",
                 
             }}
         >
