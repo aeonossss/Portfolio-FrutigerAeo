@@ -1,5 +1,5 @@
 import '../Styles/folder.css';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { pubmats, magazine, assets } from '../Components/PortfolioFolder'
 
 function FolderRC() {
