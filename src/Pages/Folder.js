@@ -1,10 +1,10 @@
 import '../Styles/folder.css';
-
+import SectionButtons from '../Components/SectionButtons';
 
 function Folder(){
     return(
         <div>
-            <p1 className='folder-placeholder-text'>Portfolio Page Coming Soon!</p1>
+            <SectionButtons />
         </div>
     )
 }

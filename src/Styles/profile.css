@@ -73,6 +73,10 @@
     margin: 30px;
 }
 
+.info{
+    color: #4C4C4C;
+}
+
 .inner-content{
     display: flex;
     flex-direction: row;

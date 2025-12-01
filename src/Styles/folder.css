@@ -9,19 +9,10 @@
 }
 
 
-li{
+.folder-list li{
     list-style: none;
     margin: 10px 20px 10px 20px;
 }
-
-.folder-container{
-    display: flex;
-    flex-direction: row;
-    height: auto;
-    width: auto;
-    margin: 10px;
-}
-
 
 .folder-list{
     margin: 0;
@@ -29,14 +20,58 @@ li{
     display: flex;
 }
 
-.folder-list img{
-    width: 40px;
-    height: 40px;
+h1{
+    flex-basis: 100%;
+    font-size: 1.5em;
+    color: #3a769c;
 }
 
-.folder-one{
+.folder-container img{
+    width: 15em;
+    height: 15em;
+    object-fit: contain;
+}
+
+.pubmat-container, .magazine-container, .asset-design{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    margin: 15px;
+    flex-wrap: wrap;
+}
+
+li{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    padding :10px;
+}
+
+li img:active{
+    transform: scale(1.1);
+    z-index: 100;
+}
+
+p{
+    margin: 5px;
+}
+
+li:hover{
+    background-color: rgb(238, 238, 238);
+}
+
+li img:hover{
+    filter: drop-shadow(0 0 5px #acb1b1)
+}
+
+.section-buttons p{
+    color:#3a769c;
+    margin: 30px 0 30px 0;
+}
+
+.section-buttons p:hover{
+    text-decoration: underline;
 }

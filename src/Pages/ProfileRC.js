@@ -16,8 +16,13 @@ function ProfileRC(){
             <p className='developer'> Eya Isabel Yalung</p>
             <p className='dev-title'> Front-End Developer </p>
             <p className='about'>
-                Creative and detail-oriented Graphic and Web Designer/Developer with a passion for crafting engaging 2D/3D designs and building websites that are both functional and user-friendly. Known for blending design sensibility with technical expertise to create meaningful digital experiences. Continuously expanding skills through hands-on projects and On-the-Job Training (OJT) / internship experiences, bringing curiosity and dedication to every project.
+                A PH-based web developer, freelance illustrator, and graphic designer.
             </p>
+            <ul className='info'>
+                <li>I produce formal publication materials,</li>
+                <li>create website wireframes,</li>
+                <li>and hand-drawn asset designs.</li>
+            </ul>
             <br></br>
             <div className='inner-content'>
                 <div className='left-inner-content'>

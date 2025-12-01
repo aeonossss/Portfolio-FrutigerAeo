@@ -25,6 +25,8 @@ function MediaPlayerRC({ player,  maximized }) {
         { title: "Shop Theme - Nintendo DSi", cover: shop },
         { title: "Wii Party - Main Menu", cover: wiiparty },
         { title: "Zombies On Your Lawn (Instrumental) - Laura Shigihara", cover: pvz },
+        { title: "Watery Graves (Fast Version) - Laura Shigihara", cover: pvz },
+        { title: "Watery Graves (In-Game) - Laura Shigihara", cover: pvz }
     ]
 
     if (!song){ 
